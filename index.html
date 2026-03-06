@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>BOU BAZAR TOP UP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+body{
+font-family:Arial;
+background:#111;
+color:white;
+text-align:center;
+margin:0;
+}
+
+header{
+background:#00ffd5;
+color:black;
+padding:15px;
+font-size:22px;
+}
+
+.package{
+background:#222;
+margin:10px;
+padding:15px;
+border-radius:10px;
+}
+
+button{
+background:#00ffd5;
+border:none;
+padding:10px 20px;
+border-radius:8px;
+margin:5px;
+}
+
+input{
+padding:10px;
+margin:5px;
+width:80%;
+border-radius:8px;
+border:none;
+}
+</style>
+
+<script>
+
+function order(name,price){
+
+let uid=document.getElementById("uid").value;
+let player=document.getElementById("player").value;
+
+if(uid=="" || player==""){
+alert("Player Name এবং UID দিন");
+return;
+}
+
+let phone="8801624997988";
+
+let text="BOU BAZAR TOP UP\n\nPlayer: "+player+
+"\nUID: "+uid+
+"\nPackage: "+name+
+"\nPrice: "+price;
+
+window.open("https://wa.me/"+phone+"?text="+encodeURIComponent(text));
+}
+
+function toggleUCLLight(){
+let x=document.getElementById("ucllight");
+x.style.display=(x.style.display=="none")?"block":"none";
+}
+
+function toggleUCL(){
+let x=document.getElementById("ucl");
+x.style.display=(x.style.display=="none")?"block":"none";
+}
+
+function toggleMatli(){
+let x=document.getElementById("matli");
+x.style.display=(x.style.display=="none")?"block":"none";
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>BOU BAZAR TOP UP</header>
+
+<h3>Player Information</h3>
+
+<input type="text" id="player" placeholder="Player Name"><br>
+<input type="number" id="uid" placeholder="Player UID"><br>
+
+<br>
+
+<button onclick="toggleUCLLight()">UCL Light ON / OFF</button>
+<button onclick="toggleUCL()">UCL ON / OFF</button>
+<button onclick="toggleMatli()">Matli ON / OFF</button>
+
+<div class="package" id="ucllight">
+<h3>UCL Light</h3>
+<p>1 TK</p>
+<button onclick="order('UCL Light','1 TK')">Select</button>
+</div>
+
+<div class="package" id="ucl">
+<h3>UCL</h3>
+<p>10 TK</p>
+<button onclick="order('UCL','10 TK')">Select</button>
+</div>
+
+<div class="package" id="matli">
+<h3>Matli</h3>
+<p>660 TK</p>
+<button onclick="order('Matli','660 TK')">Select</button>
+</div>
+
+<br>
+
+<h3>Payment</h3>
+<p>Bkash / Nagad: 01851634841</p>
+
+<h3>WhatsApp Order</h3>
+<p>01624997988</p>
+
+</body>
+</html>
